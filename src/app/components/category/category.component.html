@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let c of card">
+                <a class="btn" routerLink="/selectedcategory" [queryParams]="{id:c.id}">{{c.snippet.title}}</a>
+                <br>
+        </div>
+    </div>
+</div>
+

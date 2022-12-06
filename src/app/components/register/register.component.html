@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="mt-2">
+                <h2 class="text-center">Sign Up</h2>
+            </div>
+            <form [formGroup]="signUp" (ngSubmit)="onSubmit()">
+                <div class="mt-2">
+                    <label>First Name</label>
+                    <input class="form-control form-control-sm" formControlName="firstname">
+                    <div class="text-danger" *ngIf="firstname?.dirty && firstname?.errors?.['required']">
+                        First Name is required
+                    </div>
+                    <div class="text-danger" *ngIf="firstname?.dirty && firstname?.errors?.['pattern']">
+                        First Name is not valid
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <label>Last Name</label>
+                    <input class="form-control form-control-sm" formControlName="lastname">
+                    <div class="text-danger" *ngIf="lastname?.dirty && lastname?.invalid">
+                        Last Name is required
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <label>age</label>
+                    <input  class="form-control form-control-sm" formControlName="age">
+                    <div class="text-danger" *ngIf="age?.dirty && age?.invalid">
+                        age is required
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <label>city</label>
+                    <input  class="form-control form-control-sm" formControlName="city">
+                    <div class="text-danger" *ngIf="city?.dirty && city?.invalid">
+                        city is required
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <label>Email</label>
+                    <input  class="form-control form-control-sm" formControlName="email">
+                    <div class="text-danger" *ngIf="email?.dirty && email?.invalid">
+                        email is required
+                    </div>
+                </div>
+                <div class="mt-2">
+                <label>Password</label>
+                    <input type="password"  class="form-control form-control-sm" formControlName="password">
+                    <div class="text-danger" *ngIf="password?.dirty && password?.invalid">
+                        password is required
+                    </div>  
+                </div>
+                <button class="btn btn-primary mt-1" color="primary">Save Changes</button>
+            </form>
+        </div>
+    </div>  
+</div>
